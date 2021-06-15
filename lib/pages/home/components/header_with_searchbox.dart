@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plant_app_flutter_ui/theme.dart';
 
-
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
     Key? key,
@@ -17,7 +16,7 @@ class HeaderWithSearchBox extends StatelessWidget {
       // It will cover 20% of our total height
       height: size.height * 0.2,
       margin: EdgeInsets.only(
-        bottom: defaultPadding * 2.5,
+        bottom: defaultPadding * 1.8,
       ),
       child: Stack(
         children: [

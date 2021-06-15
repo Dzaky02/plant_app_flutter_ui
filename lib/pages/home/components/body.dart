@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:plant_app_flutter_ui/models/plant_model.dart';
+import 'package:plant_app_flutter_ui/pages/home/components/featured_plants.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/header_with_searchbox.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/list_of_recomend_plants.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/title_with_more_btn.dart';
@@ -34,6 +35,11 @@ class Body extends StatelessWidget {
       price: 440,
     ),
   ];
+  final List<String> listOfFeaturedPlants = [
+    "assets/images/bottom_img_1.png",
+    "assets/images/bottom_img_2.png",
+    "assets/images/bottom_img_1.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +52,11 @@ class Body extends StatelessWidget {
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: 'Recomended', press: () {}),
           ListOfRecomendPlants(size: size, listOfPlants: listOfPlants),
+          TitleWithMoreBtn(title: 'Featured Plants', press: () {}),
+          FeaturedPlants(listOfFeaturedPlants: listOfFeaturedPlants),
+          SizedBox(
+            height: defaultPadding,
+          ),
         ],
       ),
     );

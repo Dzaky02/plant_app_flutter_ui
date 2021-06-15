@@ -15,7 +15,7 @@ class ListOfRecomendPlants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.43,
+      height: size.height * 0.41,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.only(
@@ -48,7 +48,7 @@ class RecomendedPlantCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       // Cover 40% of screen width
-      width: size.width * 0.4,
+      width: size.width * 0.38,
       margin: EdgeInsets.only(
         right: defaultPadding,
       ),
@@ -56,10 +56,7 @@ class RecomendedPlantCard extends StatelessWidget {
         children: [
           Image.asset(plant.image),
           GestureDetector(
-            onTap: () {
-              // ignore: unnecessary_statements
-              press;
-            },
+            onTap: () => press,
             child: Container(
               padding: EdgeInsets.all(defaultPadding / 2),
               decoration: BoxDecoration(
