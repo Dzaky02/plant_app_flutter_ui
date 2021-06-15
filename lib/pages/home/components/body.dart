@@ -1,11 +1,39 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:plant_app_flutter_ui/models/plant_model.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/header_with_searchbox.dart';
+import 'package:plant_app_flutter_ui/pages/home/components/list_of_recomend_plants.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/title_with_more_btn.dart';
+import 'package:plant_app_flutter_ui/theme.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  final List<Plant> listOfPlants = [
+    Plant(
+      image: "assets/images/image_1.png",
+      title: "Samantha",
+      country: "Russia",
+      price: 440,
+    ),
+    Plant(
+      image: "assets/images/image_2.png",
+      title: "Angelica",
+      country: "Russia",
+      price: 440,
+    ),
+    Plant(
+      image: "assets/images/image_3.png",
+      title: "Samantha",
+      country: "Russia",
+      price: 440,
+    ),
+    Plant(
+      image: "assets/images/image_1.png",
+      title: "Samantha",
+      country: "Russia",
+      price: 440,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +44,8 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(
-            title: 'Recomended',
-            press: () {},
-          ),
+          TitleWithMoreBtn(title: 'Recomended', press: () {}),
+          ListOfRecomendPlants(size: size, listOfPlants: listOfPlants),
         ],
       ),
     );
