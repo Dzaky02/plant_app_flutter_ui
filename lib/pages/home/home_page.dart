@@ -4,7 +4,7 @@ import 'package:plant_app_flutter_ui/components/bottom_navbar.dart';
 import 'package:plant_app_flutter_ui/pages/home/components/body.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  // const HomePage({}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

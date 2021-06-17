@@ -3,9 +3,8 @@ import 'package:plant_app_flutter_ui/theme.dart';
 
 class FeaturedPlants extends StatelessWidget {
   const FeaturedPlants({
-    Key? key,
     required this.listOfFeaturedPlants,
-  }) : super(key: key);
+  });
 
   final List<String> listOfFeaturedPlants;
 
@@ -27,19 +26,18 @@ class FeaturedPlants extends StatelessWidget {
 
 class FeaturePlantCard extends StatelessWidget {
   const FeaturePlantCard({
-    Key? key,
     required this.image,
     required this.press,
-  }) : super(key: key);
+  });
 
   final String image;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () => press,
+      onTap: press,
       child: Container(
         width: size.width * 0.8,
         height: 185,

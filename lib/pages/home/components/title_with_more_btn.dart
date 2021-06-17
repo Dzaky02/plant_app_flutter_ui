@@ -3,16 +3,12 @@ import 'package:plant_app_flutter_ui/theme.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
-    Key? key, required this.title, required this.press,
-  }) : super(key: key);
+    required this.title,
+    required this.press,
+  });
 
   final String title;
-  final Function press;
-
-  void buildPress () {
-    // ignore: unnecessary_statements
-    press;
-  }
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +19,7 @@ class TitleWithMoreBtn extends StatelessWidget {
           TitleWithCustomUnderline(text: title),
           Spacer(),
           ElevatedButton(
-            onPressed: buildPress,
+            onPressed: press,
             child: Text('More'),
             style: ElevatedButton.styleFrom(
               elevation: 0,
@@ -42,9 +38,8 @@ class TitleWithMoreBtn extends StatelessWidget {
 
 class TitleWithCustomUnderline extends StatelessWidget {
   const TitleWithCustomUnderline({
-    Key? key,
     required this.text,
-  }) : super(key: key);
+  });
 
   final String text;
 

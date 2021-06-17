@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app_flutter_ui/models/plant_model.dart';
+import 'package:plant_app_flutter_ui/pages/detail/detail_page.dart';
 import 'package:plant_app_flutter_ui/theme.dart';
 
 class ListOfRecomendPlants extends StatelessWidget {
   const ListOfRecomendPlants({
-    Key? key,
     required this.size,
     required this.listOfPlants,
-  }) : super(key: key);
+  });
 
   final Size size;
   final List<Plant> listOfPlants;
@@ -26,7 +26,14 @@ class ListOfRecomendPlants extends StatelessWidget {
           itemBuilder: (context, index) {
             return RecomendedPlantCard(
               plant: listOfPlants[index],
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(),
+                  ),
+                );
+              },
             );
           }),
     );
@@ -35,13 +42,12 @@ class ListOfRecomendPlants extends StatelessWidget {
 
 class RecomendedPlantCard extends StatelessWidget {
   const RecomendedPlantCard({
-    Key? key,
     required this.plant,
     required this.press,
-  }) : super(key: key);
+  });
 
   final Plant plant;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +58,12 @@ class RecomendedPlantCard extends StatelessWidget {
       margin: EdgeInsets.only(
         right: defaultPadding,
       ),
-      child: Column(
-        children: [
-          Image.asset(plant.image),
-          GestureDetector(
-            onTap: () => press,
-            child: Container(
+      child: InkWell(
+        onTap: press,
+        child: Column(
+          children: [
+            Image.asset(plant.image),
+            Container(
               padding: EdgeInsets.all(defaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -101,8 +107,8 @@ class RecomendedPlantCard extends StatelessWidget {
                 ],
               ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
