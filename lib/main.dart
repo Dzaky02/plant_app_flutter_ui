@@ -1,9 +1,13 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app_flutter_ui/pages/home/home_page.dart';
 import 'package:plant_app_flutter_ui/theme.dart';
 
 void main() {
   runApp(MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
 }
 
 class MyApp extends StatelessWidget {
