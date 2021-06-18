@@ -4,15 +4,12 @@ import 'package:plant_app_flutter_ui/pages/detail/components/icon_card.dart';
 import 'package:plant_app_flutter_ui/theme.dart';
 
 class ImageAndIcons extends StatelessWidget {
-  const ImageAndIcons({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
+  // const ImageAndIcons({
+  // });
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
