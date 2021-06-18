@@ -10,6 +10,7 @@ class FeaturedPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       height: 185,
       child: ListView.builder(
@@ -17,7 +18,26 @@ class FeaturedPlants extends StatelessWidget {
         itemCount: listOfFeaturedPlants.length,
         itemBuilder: (context, index) => FeaturePlantCard(
           image: listOfFeaturedPlants[index],
-          press: () {},
+          press: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Featured Plant Clicked',
+                  style: TextStyle(color: primaryColor),
+                ),
+                duration: const Duration(milliseconds: 1000),
+                width: size.width * 0.7, // Width of the SnackBar.
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 18, // Inner padding for SnackBar content.
+                ),
+                behavior: SnackBarBehavior.floating,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: backgroundColor,
+              ),
+            );
+          },
         ),
       ),
     );

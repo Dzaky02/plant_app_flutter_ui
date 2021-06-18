@@ -50,9 +50,53 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(title: 'Recomended', press: () {}),
+          TitleWithMoreBtn(
+            title: 'Recomended',
+            press: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Show More Clicked',
+                    style: TextStyle(color: primaryColor),
+                  ),
+                  duration: const Duration(milliseconds: 1000),
+                  width: size.width * 0.7, // Width of the SnackBar.
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 18, // Inner padding for SnackBar content.
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  backgroundColor: backgroundColor,
+                ),
+              );
+            },
+          ),
           ListOfRecomendPlants(size: size, listOfPlants: listOfPlants),
-          TitleWithMoreBtn(title: 'Featured Plants', press: () {}),
+          TitleWithMoreBtn(
+            title: 'Featured Plants',
+            press: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Show More Clicked',
+                    style: TextStyle(color: primaryColor),
+                  ),
+                  duration: const Duration(milliseconds: 1000),
+                  width: size.width * 0.7, // Width of the SnackBar.
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 18, // Inner padding for SnackBar content.
+                  ),
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  backgroundColor: backgroundColor,
+                ),
+              );
+            },
+          ),
           FeaturedPlants(listOfFeaturedPlants: listOfFeaturedPlants),
           SizedBox(
             height: defaultPadding,
